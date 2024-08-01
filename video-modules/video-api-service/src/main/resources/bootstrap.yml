@@ -1,0 +1,19 @@
+# Tomcat
+server:
+  port: 8889
+
+# Spring
+spring: 
+  application:
+    # 应用名称
+    name: video-api-service
+  config:
+    import:
+      - nacos:video-api-service.yaml
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        namespace: video
+      config:
+        namespace: video

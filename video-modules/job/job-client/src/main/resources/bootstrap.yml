@@ -1,0 +1,18 @@
+server:
+  port: 8901
+
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: job-client
+  config:
+    import:
+      - nacos:job-client.yaml
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        namespace: video
+      config:
+        namespace: video

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.video.processor.mapper.VideoCaptureMyflixerzMapper">
+
+
+    <insert id="saveBatch">
+        INSERT INTO `video`.`video_capture_myflixerz` ( `title`, `s_path`, `year`,
+        `type`, `status`, `create_time`, `update_time`, `s_path_id`, `anjian_url` , `page_size`) VALUES
+        <foreach collection="list" item="item" separator="," close="" open="">
+            (
+            #{item.title}, #{item.sPath}, #{item.year}, #{item.type}, #{item.status},
+            #{item.createTime}, #{item.updateTime}, #{item.sPathId}, #{item.anjianUrl}, #{item.pageSize}
+            )
+        </foreach>
+    </insert>
+</mapper>
